@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>mellwdev</title>
+    <link rel="stylesheet" href="./styles/index.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+      integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="favicon/site.webmanifest" />
+  </head>
+
+  <body>
+    <div id="start-screen">
+      <svg
+        class="logo"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+      >
+        <path
+          d="M11.6734 7.22198C10.7974 7.22198 9.44138 6.22598 8.01338 6.26198C6.12938 6.28598 4.40138 7.35397 3.42938 9.04597C1.47338 12.442 2.92538 17.458 4.83338 20.218C5.76938 21.562 6.87338 23.074 8.33738 23.026C9.74138 22.966 10.2694 22.114 11.9734 22.114C13.6654 22.114 14.1454 23.026 15.6334 22.99C17.1454 22.966 18.1054 21.622 19.0294 20.266C20.0974 18.706 20.5414 17.194 20.5654 17.11C20.5294 17.098 17.6254 15.982 17.5894 12.622C17.5654 9.81397 19.8814 8.46998 19.9894 8.40998C18.6694 6.47798 16.6414 6.26198 15.9334 6.21398C14.0854 6.06998 12.5374 7.22198 11.6734 7.22198ZM14.7934 4.38998C15.5734 3.45398 16.0894 2.14598 15.9454 0.849976C14.8294 0.897976 13.4854 1.59398 12.6814 2.52998C11.9614 3.35798 11.3374 4.68998 11.5054 5.96198C12.7414 6.05798 14.0134 5.32598 14.7934 4.38998Z"
+        ></path>
+      </svg>
+      <div class="loading">
+        <div class="bar"></div>
+      </div>
+    </div>
+    <div id="desktop">
+      <div id="context-menu" class="context-menu">
+        <div class="menu-itens2">
+          <div class="menu-item2">New Folder...</div>
+        </div>
+        <div class="menu-separator">0</div>
+        <div class="menu-itens2">
+          <div class="menu-item2">Get Info</div>
+          <div onclick="openApp('settings', 'dot-set')" class="menu-item2">
+            Change Wallpaper...
+          </div>
+        </div>
+        <div class="menu-separator">0</div>
+        <div class="menu-itens2">
+          <div class="menu-item2">Sort By ></div>
+          <div class="menu-item2">Clean Up</div>
+          <div class="menu-item2">Show View Options</div>
+        </div>
+      </div>
+      <div id="menubar" class="menubar">
+        <div class="menu-itens">
+          <div id="menu-apple" class="menu-item">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path
+                d="M11.6734 7.22198C10.7974 7.22198 9.44138 6.22598 8.01338 6.26198C6.12938 6.28598 4.40138 7.35397 3.42938 9.04597C1.47338 12.442 2.92538 17.458 4.83338 20.218C5.76938 21.562 6.87338 23.074 8.33738 23.026C9.74138 22.966 10.2694 22.114 11.9734 22.114C13.6654 22.114 14.1454 23.026 15.6334 22.99C17.1454 22.966 18.1054 21.622 19.0294 20.266C20.0974 18.706 20.5414 17.194 20.5654 17.11C20.5294 17.098 17.6254 15.982 17.5894 12.622C17.5654 9.81397 19.8814 8.46998 19.9894 8.40998C18.6694 6.47798 16.6414 6.26198 15.9334 6.21398C14.0854 6.06998 12.5374 7.22198 11.6734 7.22198ZM14.7934 4.38998C15.5734 3.45398 16.0894 2.14598 15.9454 0.849976C14.8294 0.897976 13.4854 1.59398 12.6814 2.52998C11.9614 3.35798 11.3374 4.68998 11.5054 5.96198C12.7414 6.05798 14.0134 5.32598 14.7934 4.38998Z"
+              ></path>
+            </svg>
+            <div id="menu-context" class="menu-context">
+              <div onclick="openApp('about')" class="context-item">
+                About This Mac...
+              </div>
+              <div class="sep">0</div>
+              <div onclick="openApp('settings')" class="context-item">
+                System Preferences...
+              </div>
+              <div class="context-item">App Store...</div>
+              <div class="context-item">Recent Itens...</div>
+              <div class="context-item">Force Quit</div>
+              <div class="context-item">Sleep</div>
+              <div onclick="location.reload()" class="context-item">
+                Restart...
+              </div>
+              <div class="context-item">Shut Down...</div>
+              <div class="sep2">1</div>
+              <div class="context-item">Lock Screen...</div>
+              <div class="context-item">Log Out User...</div>
+            </div>
+          </div>
+          <div class="menu-item" style="font-weight: 600" id="valuer">
+            Finder
+          </div>
+          <div class="menu-item">File</div>
+          <div class="menu-item">Edit</div>
+          <div class="menu-item">View</div>
+          <div class="menu-item">Go</div>
+          <div class="menu-item">Window</div>
+          <div class="menu-item">Help</div>
+        </div>
+        <div class="menu-itens">
+          <div id="open-control" class="menu-item">
+            <svg
+              width="30"
+              height="30"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentColor"
+              viewBox="0 0 351 348"
+            >
+              <path
+                stroke="currentColor"
+                d="M87.75 46.2c9.31 0 18.237 3.245 24.819 9.021 6.583 5.776 10.281 13.61 10.281 21.779s-3.698 16.003-10.281 21.779c-6.582 5.776-15.51 9.021-24.819 9.021-9.31 0-18.237-3.245-24.82-9.021C56.349 93.003 52.65 85.169 52.65 77s3.698-16.003 10.28-21.779c6.583-5.776 15.51-9.021 24.82-9.021zM263.25 0c23.273 0 45.592 8.112 62.049 22.553C341.755 36.993 351 56.578 351 77c0 20.422-9.245 40.007-25.701 54.447C308.842 145.888 286.523 154 263.25 154H87.75c-23.273 0-45.592-8.112-62.049-22.553C9.245 117.007 0 97.422 0 77c0-20.422 9.245-40.007 25.701-54.447C42.158 8.113 64.477 0 87.75 0h175.5zM87.75 30.8c-13.964 0-27.355 4.867-37.23 13.532C40.648 52.996 35.1 64.747 35.1 77s5.547 24.004 15.42 32.668c9.875 8.665 23.266 13.532 37.23 13.532h175.5c13.964 0 27.355-4.867 37.229-13.532C310.353 101.004 315.9 89.253 315.9 77s-5.547-24.004-15.421-32.668C290.605 35.667 277.214 30.8 263.25 30.8H87.75zM263.25 194H87.75c-23.273 0-45.592 8.112-62.049 22.553C9.245 230.993 0 250.578 0 271c0 20.422 9.245 40.007 25.701 54.447C42.158 339.888 64.477 348 87.75 348h175.5c23.273 0 45.592-8.112 62.049-22.553C341.755 311.007 351 291.422 351 271c0-20.422-9.245-40.007-25.701-54.447C308.842 202.112 286.523 194 263.25 194v0zm0 123.2c-13.964 0-27.355-4.867-37.229-13.532-9.874-8.664-15.421-20.415-15.421-32.668s5.547-24.004 15.421-32.668c9.874-8.665 23.265-13.532 37.229-13.532 13.964 0 27.355 4.867 37.229 13.532 9.874 8.664 15.421 20.415 15.421 32.668s-5.547 24.004-15.421 32.668c-9.874 8.665-23.265 13.532-37.229 13.532z"
+              ></path>
+            </svg>
+            <div id="control-center">
+              <div class="colum column-2">
+                <div class="cc-btn">
+                  <div style="background: var(--color-accent-blue)" class="icn">
+                    <i
+                      style="color: var(--color-text)"
+                      class="ri-wifi-fill"
+                    ></i>
+                  </div>
+                  Wifi
+                </div>
+                <div class="cc-btn big-btn">
+                  <div class="icn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12.001 2C6.50098 2 2.00098 6.5 2.00098 12C2.00098 17.5 6.50098 22 12.001 22C17.501 22 22.001 17.5 22.001 12C22.001 6.5 17.551 2 12.001 2ZM15.751 16.65C13.401 15.2 10.451 14.8992 6.95014 15.6992C6.60181 15.8008 6.30098 15.55 6.20098 15.25C6.10098 14.8992 6.35098 14.6 6.65098 14.5C10.451 13.6492 13.751 14 16.351 15.6C16.701 15.75 16.7501 16.1492 16.6018 16.45C16.4018 16.7492 16.0518 16.85 15.751 16.65ZM16.7501 13.95C14.051 12.3 9.95098 11.8 6.80098 12.8C6.40181 12.9 5.95098 12.7 5.85098 12.3C5.75098 11.9 5.95098 11.4492 6.35098 11.3492C10.001 10.25 14.501 10.8008 17.601 12.7C17.9018 12.8508 18.051 13.35 17.8018 13.7C17.551 14.05 17.101 14.2 16.7501 13.95ZM6.30098 9.75083C5.80098 9.9 5.30098 9.6 5.15098 9.15C5.00098 8.64917 5.30098 8.15 5.75098 7.99917C9.30098 6.94917 15.151 7.14917 18.8518 9.35C19.301 9.6 19.451 10.2 19.201 10.65C18.9518 11.0008 18.351 11.1492 17.9018 10.9C14.701 9 9.35098 8.8 6.30098 9.75083Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  Spotify
+                </div>
+
+                <div class="l2">
+                  <div class="cc-btn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M14.3116 12L18.6548 16.3431L12.9979 22H10.9979V15.3137L6.63394 19.6777L5.21973 18.2635L10.9979 12.4853V11.5147L5.21973 5.73654L6.63394 4.32233L10.9979 8.68629V2H12.9979L18.6548 7.65685L14.3116 12ZM12.9979 13.5147V19.1716L15.8263 16.3431L12.9979 13.5147ZM12.9979 10.4853L15.8263 7.65685L12.9979 4.82843V10.4853Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  <div id="switch-theme" class="cc-btn cc-one">
+                    <svg viewBox="0 0 24 24" width="1.2em" height="1.2em">
+                      <g fill="currentColor">
+                        <path d="M12 16a4 4 0 0 0 0-8z"></path>
+                        <path
+                          fill-rule="evenodd"
+                          d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10s10-4.477 10-10S17.523 2 12 2m0 2v4a4 4 0 1 0 0 8v4a8 8 0 1 0 0-16"
+                          clip-rule="evenodd"
+                        ></path>
+                      </g>
+                    </svg>
+                  </div>
+                </div>
+                <div class="cc-btn">
+                  <div class="icn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M3 6H21V18H3V6ZM2 4C1.44772 4 1 4.44772 1 5V19C1 19.5523 1.44772 20 2 20H22C22.5523 20 23 19.5523 23 19V5C23 4.44772 22.5523 4 22 4H2ZM13 9H19V11H13V9ZM18 13H13V15H18V13ZM6 13H7V16H9V11H6V13ZM9 8H7V10H9V8Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  About
+                </div>
+              </div>
+              <div class="colum">
+                <div class="cc-btn">
+                  <div class="icn">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <path
+                        d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM8.82258 15.3427C8.42804 14.8663 7.9373 14.6957 7.34401 14.834L7.19355 14.875L6.60484 15.8911C6.37903 16.2863 6.5121 16.7903 6.90726 17.0161C7.26949 17.2231 7.7232 17.1286 7.97023 16.807L8.03226 16.7137L8.82258 15.3427ZM13.2097 8.66129C12.7218 9.06452 12.2298 10.2581 12.9194 11.4476L15.9597 16.7137C16.1895 17.1089 16.6895 17.2419 17.0847 17.0161C17.4469 16.8054 17.5889 16.3677 17.4361 15.9919L17.3871 15.8911L16.5847 14.5H17.7742C18.2298 14.5 18.5968 14.1331 18.5968 13.6774C18.5968 13.2568 18.2841 12.9118 17.8776 12.8612L17.7742 12.8548H15.6331L13.44 9.05741L13.2097 8.66129ZM13.4879 5.61694C13.1257 5.40995 12.672 5.50451 12.4249 5.82608L12.3629 5.91935L11.996 6.55242L11.6371 5.91935C11.4073 5.52419 10.9073 5.39113 10.5121 5.61694C10.1499 5.82762 10.0079 6.26532 10.1606 6.64118L10.2097 6.74194L11.0484 8.19758L8.3629 12.8508H6.26613C5.81048 12.8508 5.44355 13.2177 5.44355 13.6734C5.44355 14.094 5.7562 14.439 6.16268 14.4896L6.26613 14.496H13.746C14.0869 13.8562 13.6854 12.9472 12.9357 12.8579L12.8145 12.8508H10.2621L13.7903 6.74194C14.0161 6.34677 13.8831 5.84274 13.4879 5.61694Z"
+                      ></path>
+                    </svg>
+                  </div>
+                  Store
+                </div>
+                <div class="cc-btn">
+                  <div class="icn">
+                    <i class="ri-music-fill"></i>
+                  </div>
+                  Audio
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="clock">00:00</div>
+        </div>
+      </div>
+      <div id="dock" class="dock">
+        <ul class="itens">
+          <div onclick="openApp('finder')" class="item">
+            <img src="./assets/images/explorer.png" alt="" />
+            <div class="tag">Finder</div>
+            <span id="fin-dot" class="dot"></span>
+          </div>
+          <div class="separator">0</div>
+          <div onclick="openApp('notes', 'notes-dot')" class="item">
+            <img src="./assets/images/textedit.png" alt="" />
+            <div class="tag">Notes</div>
+            <span id="notes-dot" class="dot"></span>
+          </div>
+          <div onclick="openApp('safari', 'dot-sf')" class="item">
+            <img src="./assets/images/chrome.png" alt="" />
+            <div class="tag">Safari</div>
+            <span id="dot-sf" class="dot"></span>
+          </div>
+          <div onclick="openApp('music', 'music-dot')" class="item">
+            <img src="./assets/images/phone.png" alt="" />
+            <div class="tag">Music</div>
+            <span id="music-dot" class="dot"></span>
+          </div>
+          <div onclick="openApp('vscode', 'dot-vsc')" class="item">
+            <img src="./assets/images/vscode.png" alt="" />
+            <div class="tag">VSCode</div>
+            <span id="dot-vsc" class="dot"></span>
+          </div>
+
+          <div onclick="openApp('messages', 'ms-dot')" class="item">
+            <img src="./assets/images/messages.png" alt="" />
+            <div class="tag">Messages</div>
+            <span id="ms-dot" class="dot"></span>
+          </div>
+          <div class="separator">0</div>
+          <div class="item">
+            <img src="./assets/images/app atore.png" alt="" />
+            <div class="tag">App Store</div>
+            <span class="dot"></span>
+          </div>
+          <div onclick="openApp('settings', 'dot-set')" class="item">
+            <img src="./assets/images/settings.png" alt="" />
+            <div class="tag">System Settings</div>
+            <span class="dot" id="dot-set"></span>
+          </div>
+        </ul>
+      </div>
+      <div class="window" id="settings">
+        <div class="header">
+          <div class="buttons">
+            <button
+              onclick="closeApp('settings', 'dot-set')"
+              class="close"
+            ></button>
+            <button onclick="minApp('settings')" class="min"></button>
+            <button onclick="maximizeApp('settings')" class="max"></button>
+          </div>
+          <div id="set-title" class="title">System Settings</div>
+        </div>
+
+        <div class="content settings-content">
+          <div class="sidebar">
+            <div class="list">
+              <div class="list-item"><i class="ri-user-line"></i>Account</div>
+              <div class="list-item">
+                <i class="ri-image-line"></i>Wallpaper
+              </div>
+              <div class="list-item">
+                <i class="ri-bluetooth-line"></i>Bluetooth
+              </div>
+              <div class="list-item"><i class="ri-wifi-line"></i>Wi-Fi</div>
+            </div>
+          </div>
+          <div class="two-content">
+            <h1>Wallpapers</h1>
+            <div class="wallpaper-content">
+              <div
+                onclick="setBG('./assets/images/fun-beach.webp')"
+                class="bg-card"
+              >
+                <img src="./assets/images/fun-beach.webp" alt="" />
+                <div class="name">Tahoe</div>
+              </div>
+              <div
+                onclick="setBG('./assets/images/goldengatedark.webp')"
+                class="bg-card"
+              >
+                <img src="./assets/images/goldengatedark.webp" alt="" />
+                <div class="name">Golden Gate Dark</div>
+              </div>
+              <div
+                onclick="setBG('./assets/images/beach.webp')"
+                class="bg-card"
+              >
+                <img src="./assets/images/beach.webp" alt="" />
+                <div class="name">Beach Dark</div>
+              </div>
+              <div
+                onclick="setBG('./assets/images/beach-day.webp')"
+                class="bg-card"
+              >
+                <img src="./assets/images/beach-day.webp" alt="" />
+                <div class="name">Beach</div>
+              </div>
+              <div
+                onclick="setBG('./assets/images/goldengate.webp')"
+                class="bg-card"
+              >
+                <img src="./assets/images/goldengate.webp" alt="" />
+                <div class="name">Golden Gate</div>
+              </div>
+              <div
+                onclick="setBG('./assets/images/monterey.webp')"
+                class="bg-card"
+              >
+                <img src="./assets/images/monterey.webp" alt="" />
+                <div class="name">Monterey</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="window" id="notes">
+        <div class="header">
+          <div class="buttons">
+            <button
+              onclick="closeApp('notes', 'notes-dot')"
+              class="close"
+            ></button>
+            <button onclick="minApp('notes')" class="min"></button>
+            <button onclick="maximizeApp('notes')" class="max"></button>
+          </div>
+          <div class="title">Notes</div>
+        </div>
+        <div class="content content-notes">
+          <input
+            spellcheck="false"
+            placeholder="Name..."
+            class="title-note"
+            type="text"
+          />
+          <textarea
+            spellcheck="false"
+            placeholder="Type your note here..."
+            id="editor"
+          ></textarea>
+        </div>
+      </div>
+      <div class="window" id="safari">
+        <div class="header">
+          <div class="buttons">
+            <button
+              onclick="closeApp('safari', 'dot-sf')"
+              class="close"
+            ></button>
+            <button onclick="minApp('safari')" class="min"></button>
+            <button onclick="maximizeApp('safari')" class="max"></button>
+          </div>
+          <div class="title">Safari</div>
+        </div>
+        <div class="content safari-content">
+          <div class="top">
+            <div class="top-btn">
+              <i class="ri-arrow-left-long-fill"></i>
+            </div>
+            <div class="top-btn">
+              <i class="ri-arrow-right-long-line"></i>
+            </div>
+            <input type="text" id="search" />
+            <button onclick="onSearch()" class="top-btn" id="search-btn">
+              <i class="ri-search-line"></i>
+            </button>
+          </div>
+          <iframe
+            id="pages"
+            src="https://www.google.com/?igu=1&pli=1"
+            frameborder="0"
+          ></iframe>
+        </div>
+      </div>
+      <div class="window" id="music">
+        <div class="header">
+          <div class="buttons">
+            <button
+              class="close"
+              onclick="closeApp('music', 'music-dot')"
+            ></button>
+            <button class="min" onclick="minApp('music')"></button>
+            <button class="max" onclick="maximizeApp('music')"></button>
+          </div>
+          <div class="title">Apple Music</div>
+        </div>
+        <div class="content music-content">
+          <img src="./assets/images/phone.png" class="logo" alt="" />
+          <h2>Service Unavailable.</h2>
+          <p>We will fix it soon.</p>
+        </div>
+      </div>
+      <div class="window" id="messages">
+        <div class="header">
+          <div class="buttons">
+            <button
+              class="close"
+              onclick="closeApp('messages', 'ms-dot')"
+            ></button>
+            <button class="min" onclick="minApp('messages')"></button>
+            <button class="max" onclick="maximizeApp('messages')"></button>
+          </div>
+          <div class="title">Messages</div>
+        </div>
+        <div class="content messages-content">
+          <div class="sidebar-contact">
+            <div class="contact">
+              <img src="./assets/images/mellwdev.jpg" alt="" />
+              <h5>mellwdev<i class="ri-verified-badge-fill"></i></h5>
+            </div>
+          </div>
+          <div class="message">
+            <div class="header2">
+              <h2>mellwdev</h2>
+            </div>
+            <img src="./assets/images/mellwdev.jpg" alt="" />
+            <h2>mellwdev<i class="ri-verified-badge-fill"></i></h2>
+            <h3>
+              Hello i'm mellwdev, i'am creator of this project, and you can
+              download and use offline. Acess link here:
+              <a href="#">macOS Github</a>
+            </h3>
+            <div class="bottom">
+              <input type="text" />
+              <button class="send">
+                <i class="ri-arrow-up-line"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="window" id="finder">
+        <div class="header">
+          <div class="buttons">
+            <button class="close" onclick="closeApp('finder')"></button>
+            <button class="min" onclick="minApp('finder')"></button>
+            <button class="max" style="background: var(--border)"></button>
+          </div>
+          <div class="detail">Desktop</div>
+        </div>
+        <div class="content finder-content">
+          <div class="sidebar-finder">
+            <ul class="itens-fold">
+              <div class="fold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2ZM12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM8.82258 15.3427L8.03226 16.7137C7.80645 17.1089 7.30242 17.2419 6.90726 17.0161C6.5121 16.7903 6.37903 16.2863 6.60484 15.8911L7.19355 14.875C7.85484 14.6694 8.39516 14.8266 8.82258 15.3427ZM13.2097 8.66129L15.6331 12.8548H17.7742C18.2298 12.8548 18.5968 13.2218 18.5968 13.6774C18.5968 14.1331 18.2298 14.5 17.7742 14.5H16.5847L17.3871 15.8911C17.6129 16.2863 17.4798 16.7863 17.0847 17.0161C16.6895 17.2419 16.1895 17.1089 15.9597 16.7137L12.9194 11.4476C12.2298 10.2581 12.7218 9.06452 13.2097 8.66129ZM13.4879 5.61694C13.8831 5.84274 14.0161 6.34677 13.7903 6.74194L10.2621 12.8508H12.8145C13.6411 12.8508 14.1048 13.8226 13.746 14.496H6.26613C5.81048 14.496 5.44355 14.129 5.44355 13.6734C5.44355 13.2177 5.81048 12.8508 6.26613 12.8508H8.3629L11.0484 8.19758L10.2097 6.74194C9.98387 6.34677 10.1169 5.84677 10.5121 5.61694C10.9073 5.39113 11.4073 5.52419 11.6371 5.91935L11.996 6.55242L12.3629 5.91935C12.5887 5.52419 13.0927 5.39113 13.4879 5.61694Z"
+                  ></path></svg
+                >Applications
+              </div>
+              <div class="fold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M5 11.1005L7 9.1005L12.5 14.6005L16 11.1005L19 14.1005V5H5V11.1005ZM5 13.9289V19H8.1005L11.0858 16.0147L7 11.9289L5 13.9289ZM10.9289 19H19V16.9289L16 13.9289L10.9289 19ZM4 3H20C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3ZM15.5 10C14.6716 10 14 9.32843 14 8.5C14 7.67157 14.6716 7 15.5 7C16.3284 7 17 7.67157 17 8.5C17 9.32843 16.3284 10 15.5 10Z"
+                  ></path>
+                </svg>
+                Pictures
+              </div>
+              <div class="fold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M3 19H21V21H3V19ZM13 13.1716L19.0711 7.1005L20.4853 8.51472L12 17L3.51472 8.51472L4.92893 7.1005L11 13.1716V2H13V13.1716Z"
+                  ></path></svg
+                >Downloads
+              </div>
+              <div class="fold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M4 16H20V5H4V16ZM13 18V20H17V22H7V20H11V18H2.9918C2.44405 18 2 17.5511 2 16.9925V4.00748C2 3.45107 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44892 22 4.00748V16.9925C22 17.5489 21.5447 18 21.0082 18H13Z"
+                  ></path></svg
+                >Desktop
+              </div>
+            </ul>
+            <div class="ind-name">Locations</div>
+            <ul class="itens-fold">
+              <div style="color: #404040" class="fold">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M14 18V20L16 21V22H8L7.99639 21.0036L10 20V18H2.9918C2.44405 18 2 17.5511 2 16.9925V4.00748C2 3.45107 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44892 22 4.00748V16.9925C22 17.5489 21.5447 18 21.0082 18H14ZM4 5V14H20V5H4Z"
+                  ></path></svg
+                >User's Mac
+              </div>
+            </ul>
+          </div>
+          <div class="folds-content">
+            <div class="folders">
+              <div class="fold2">
+                <img src="./assets/images/folder.png" alt="" />
+                <div class="fold-name">Documents</div>
+              </div>
+              <div class="fold2">
+                <img src="./assets/images/fold-app.png" alt="" />
+                <div class="fold-name">Applications</div>
+              </div>
+              <div class="fold2">
+                <img src="./assets/images/fold-games.png" alt="" />
+                <div class="fold-name">Games</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="window" id="vscode">
+        <div class="header">
+          <div class="buttons">
+            <button
+              onclick="closeApp('vscode', 'dot-vsc')"
+              class="close"
+            ></button>
+            <button onclick="minApp('vscode')" class="min"></button>
+            <button onclick="maximizeApp('vscode')" class="max"></button>
+          </div>
+          <div class="title">VSCode</div>
+        </div>
+        <div class="content">
+          <iframe src="https://github1s.com/open/" frameborder="0"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="window" id="about">
+      <div class="header">
+        <div class="buttons">
+          <button class="close" onclick="closeApp('about')"></button>
+          <button class="min" style="background: var(--border)"></button>
+          <button class="max" style="background: var(--border)"></button>
+        </div>
+        <div class="title">About</div>
+      </div>
+      <div class="content about-content">
+        <img
+          src="./assets/images/goldengate.webp"
+          width="90px"
+          height="90px"
+          style="border-radius: 100rem"
+          alt=""
+          srcset=""
+        />
+
+        <div class="list-about">
+          <h1>MacOS Golden Gate</h1>
+          <h4>Version 27.0</h4>
+        </div>
+      </div>
+    </div>
+
+    <script src="./scripts/index.js" defer></script>
+  </body>
+</html>
