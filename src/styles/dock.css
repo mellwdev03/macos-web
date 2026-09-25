@@ -1,0 +1,99 @@
+.dot {
+  background: var(--color-text);
+  width: 4px;
+  height: 4px;
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  opacity: 0;
+  transition:
+    opacity 0.3s ease,
+    background-color 0.5s ease;
+  transform: translateX(-50%);
+  border-radius: 10rem;
+}
+
+.item img {
+  width: 100%;
+  height: 100%;
+}
+.dot.active {
+  opacity: 1;
+}
+.itens {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  gap: 0.2rem;
+  padding: 0 0;
+}
+
+.item {
+  position: relative;
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-origin: bottom center;
+  will-change: width, height;
+  transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.tag {
+  position: absolute;
+  left: 50%;
+  white-space: nowrap;
+  font-weight: 500;
+  bottom: 114px;
+  color: var(--color-text);
+  backdrop-filter: blur(10px) saturate(150%);
+  opacity: 0;
+  font-family: "Inter";
+  pointer-events: none;
+  font-size: 0.8rem;
+  transition: all 0.15s ease-out;
+  transform: translate(-50%, 0);
+  box-shadow:
+    0 0 5px rgba(0, 0, 0, 0.718),
+    var(--min-glass);
+  padding: 5px 10px;
+  background: var(--bg-transparent);
+  border-radius: 3rem;
+  will-change: opacity;
+}
+
+.dock {
+  width: auto;
+  background: transparent;
+  display: flex;
+  transition:
+    background-color 0.5s ease,
+    bottom 0.3s;
+  transform-style: preserve-3d;
+  align-items: flex-end;
+  justify-content: center;
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.58),
+    var(--glass-effect);
+  height: 64px;
+  cursor: var(--cursor);
+  position: fixed;
+  z-index: 999999999 !important;
+  backdrop-filter: blur(3px) saturate(140%) brightness(105%);
+  -webkit-backdrop-filter: blur(1.5px) saturate(140%) brightness(105%);
+  left: 50%;
+  border-radius: 24px;
+  transform: translate(-50%, 0);
+  bottom: -10%;
+  padding: 7px 8px;
+  z-index: 100;
+}
+#fin-dot {
+  opacity: 1;
+}
+
+.item:hover .tag {
+  opacity: 1;
+  backdrop-filter: blur(10px) saturate(120%);
+}
