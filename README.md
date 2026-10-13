@@ -10,7 +10,7 @@ macOS tahoe in Web is a project we will you try the macOS 26.0 in your Web Brows
 
 ## Live Test
 
-macos-on-web.vercel.app
+macos-dev.vercel.app
 
 ## Devs
 
