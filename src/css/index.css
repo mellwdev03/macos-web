@@ -1,0 +1,341 @@
+* {
+  margin: 0;
+  padding: 0;
+  transition: background 0.2s;
+  user-select: none;
+  font-family: var(--font);
+}
+:root {
+  --default-bg: url(../../assets/wallpapers/light.png) no-repeat center fixed;
+  --bg-color: #fff;
+  --transparent: #ffffff1e;
+  --border: #ccc;
+  --text: #000;
+  --font: "Inter", sans-serif;
+  --color-gray: #f2f2f7;
+  --transparent-2: #ffffffa0;
+  --color-blue: #008fff;
+  --color-adjust-gray: #dadada;
+  --glass:
+    inset 0px 0.8px 0.8px rgba(254, 254, 254, 0.567),
+    inset 0px -0.7px 1.3px rgba(254, 254, 254, 0.577),
+    inset 0.5px 0 0.9px rgba(0, 0, 0, 0.299),
+    inset -0.5px 0 1px rgba(0, 0, 0, 0.299);
+  --glass-b:
+    inset 0px 0.8px 0.8px rgba(254, 254, 254, 0.33),
+    inset 0px -0.7px 1.3px rgba(254, 254, 254, 0.318),
+    inset 0.8px 0 1.2px rgba(0, 0, 0, 0.299),
+    inset -0.8px 0 1.2px rgba(0, 0, 0, 0.299);
+}
+::-webkit-scrollbar {
+  width: 12px;
+  height: 9px;
+}
+::-webkit-scrollbar-button {
+  background: var(--transparent-2);
+}
+::-webkit-scrollbar-track-piece {
+  background: var(--border);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--transparent-2);
+}
+#desk {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  background: var(--default-bg);
+  background-size: cover;
+  height: 100vh;
+}
+body.dark {
+  --bg-color: #1c1c1e;
+  --default-bg: url(../../assets/wallpapers/dark.png) no-repeat center fixed;
+  --transparent: #ffffff05;
+  --border: #151515;
+  --color-gray: #2c2c2e;
+  --text: #fff;
+  --transparent-2: #000000a0;
+  --color-adjust-gray: #2c2c2e;
+  --glass:
+    inset 0px 0.8px 0.8px rgba(254, 254, 254, 0.407),
+    inset 0px -0.7px 1.3px rgba(254, 254, 254, 0.34),
+    inset 0.5px 0 0.9px rgba(38, 37, 37, 0.299),
+    inset -0.5px 0 1px rgba(0, 0, 0, 0.299);
+}
+body.dark #theme span {
+  background: var(--color-blue);
+}
+img {
+  pointer-events: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span,
+p {
+  color: var(--text);
+  font-weight: 500;
+}
+#load-screen {
+  width: 100%;
+  height: 100vh;
+  z-index: 99999999999 !important;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: none;
+  transition: 0.4s;
+  position: fixed;
+  left: 0;
+  top: 0;
+  justify-content: center;
+  gap: 32px;
+}
+#load-screen svg {
+  width: 100px;
+  height: 100px;
+  color: #fff;
+}
+.loading {
+  border-radius: 10rem;
+  width: 220px;
+  height: 4px;
+  position: relative;
+  background: #272727;
+}
+.bar {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  border-radius: 10rem;
+  animation: load 3s forwards;
+  bottom: 0;
+  background: #fff;
+}
+@keyframes load {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+.te {
+  padding-top: 16px;
+  display: flex;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--text);
+  gap: 0.5rem;
+  padding-left: 16px;
+}
+.notch {
+  width: 70px;
+  height: 27px;
+  background: #000;
+  position: fixed;
+  left: 50%;
+  opacity: 1;
+  display: flex;
+  pointer-events: none;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100rem;
+  z-index: 99999999999999999999999999999999999999999 !important;
+  top: 10px;
+  transform: translate(-50%, 0);
+}
+.notch.show {
+  opacity: 0;
+}
+@supports (corner-shape: squircle) {
+  .dock {
+    corner-shape: squircle;
+    border-radius: 10rem;
+  }
+  .window {
+    corner-shape: squircle;
+    border-radius: 2rem;
+  }
+  .sub-item {
+    corner-shape: squircle;
+    border-radius: 1.5rem;
+  }
+  #spotlight {
+    corner-shape: squircle;
+    border-radius: 200rem !important;
+  }
+  .panel-control {
+    corner-shape: squircle;
+    border-radius: 2.4rem !important;
+  }
+  .p {
+    corner-shape: squircle;
+    border-radius: 2.3rem !important;
+  }
+  .context-menu {
+    corner-shape: squircle;
+    border-radius: 1.5rem !important;
+  }
+}
+#spotlight {
+  position: fixed;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 60px;
+  transition: 0.2s;
+  opacity: 0;
+  pointer-events: none;
+  background: var(--transparent);
+  backdrop-filter: blur(9px);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.38),
+    var(--glass);
+  border-radius: 2rem;
+}
+#spotlight.show {
+  opacity: 1;
+  pointer-events: all;
+}
+.spot {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.icon {
+  position: absolute;
+  left: 0;
+  display: flex;
+  place-items: center;
+  bottom: 0;
+  justify-content: center;
+  height: 100%;
+  width: 70px;
+}
+.icon svg {
+  width: 30px;
+  color: var(--border);
+  color: var(--text);
+  height: 30px;
+}
+.search-go {
+  width: calc(100% - 70px);
+  color: var(--text);
+  height: 100%;
+  position: absolute;
+  right: 0;
+  display: flex;
+  place-items: center;
+  outline: none;
+  font-size: 2rem;
+  bottom: 0;
+}
+#lock-screen {
+  width: 100%;
+  height: 100%;
+  background: var(--default-bg);
+  background-size: cover;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+  gap: 1rem;
+  z-index: 999999999 !important;
+}
+#lock-screen .clock {
+  position: fixed;
+  left: 50%;
+  top: 4vw;
+  transform: translate(-50%, 0);
+  font-size: 6.5rem;
+  color: #ffffffa8;
+  margin-bottom: 23vw;
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.205);
+}
+.acc {
+  position: fixed;
+  left: 50%;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  bottom: 1.5vw;
+  transform: translate(-50%, 0);
+}
+.ap {
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-direction: column;
+  display: flex;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.ap img {
+  width: 55px;
+  border-radius: 100rem;
+  height: 55px;
+}
+.acc span {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+.detail {
+  width: 17px;
+  height: 17px;
+  opacity: 1;
+  position: absolute;
+  transition: 0.3s;
+  top: 50%;
+  left: 6px;
+  transform: translate(0, -50%);
+}
+.detail svg {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+}
+#black-screen {
+  width: 100%;
+  height: 100vh;
+  background: #000;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999999999999999999999 !important;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+#black-screen.show {
+  opacity: 1;
+  pointer-events: all;
+  cursor: none;
+}
+#black-screen span {
+  padding: 8px 14px;
+  background: var(--transparent-2);
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+  border-radius: 2rem;
+  opacity: 0;
+  box-shadow: var(--glass);
+  font-size: 0.9rem;
+}
